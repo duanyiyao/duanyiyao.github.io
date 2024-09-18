@@ -5,6 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DuanyiYao - Homepage</title>
     <style>
+            #profile-photo {
+        max-width: 200px; /* Adjust this value as needed */
+        border-radius: 50%; /* This makes the image circular */
+        float: right; /* This aligns the image to the right */
+        margin: 0 0 20px 20px; /* This adds some space around the image */
+    }
+    
+    /* Add this to ensure text wraps around the image */
+    #about::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    
+    /* Responsive design for smaller screens */
+    @media (max-width: 600px) {
+        #profile-photo {
+            float: none;
+            display: block;
+            margin: 0 auto 20px;
+        }
+    }
         body {
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
