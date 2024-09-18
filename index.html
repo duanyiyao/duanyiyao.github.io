@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - PhD Student</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f8ff; /* AliceBlue */
+        }
+        header {
+            background-color: #4682b4; /* SteelBlue */
+            color: white;
+            text-align: center;
+            padding: 1em;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        h1 {
+            margin: 0;
+        }
+        nav {
+            background-color: #5f9ea0; /* CadetBlue */
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            font-weight: bold;
+        }
+        nav ul li a:hover {
+            background-color: #4682b4; /* SteelBlue */
+            border-radius: 3px;
+        }
+        section {
+            background-color: white;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        .publications-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .publications-list li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 25px;
+        }
+        .publications-list li::before {
+            content: '📄';
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .publications-list a {
+            color: #1e90ff;
+            text-decoration: none;
+        }
+        .publications-list a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            nav ul {
+                flex-direction: column;
+            }
+            nav ul li {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Duanyi Yao</h1>
+        <p>PhD Candidate in HKUST</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Welcome to my academic website! I'm a 4th year PhD candidate at HKUST specializing. My research focuses on privacy and security in ML, federated learning (FL).</p>
+        </section>
+
+        <section id="publications">
+            <h2>Publications</h2>
+            <ul class="publications-list">
+                <!-- Publication 1 -->
+                <li>
+                    Li, S., <strong>Yao, D.</strong>, & Liu, J. (2023). "<em><a href="https://proceedings.mlr.press/v202/li23an.html" target="_blank">FedVS: Straggler-Resilient and Privacy-Preserving Vertical Federated Learning for Split Models</a></em>". In <em>Proceedings of the 40th International Conference on Machine Learning</em>(ICML2023).
+                </li>
+                <!-- Publication 2 -->
+                <li>
+                    Li, H., Guo, D., Li, D., Fan, W., Hu, Q., Liu, X., Chan, C., <strong>Yao, D.</strong>, Yao, Y., & Song, Y. (2024). "<em><a href="https://aclanthology.org/2024.acl-long.4/" target="_blank">PrivLM-Bench: A Multi-level Privacy Evaluation Benchmark for Language Models</a></em>". In <em>Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics</em>(ACL2024).
+                </li>
+                <!-- Publication 3 -->
+                <li>
+                    <strong>Yao, D.</strong>, Li, S., Xue, Y., & Liu, J. (2023). "<em><a href="https://openreview.net/forum?id=m52uU0dVbH" target="_blank">Constructing Adversarial Examples for Vertical Federated Learning: Optimal Client Corruption through Multi-Armed Bandit</a></em>". In <em>Proceedings of the Twelfth International Conference on Learning Representations</em>(ICLR2024).
+                </li>
+                <!-- Publication 4 -->
+                <li>
+                    Guo, Z., <strong>Yao, D.</strong>, Yang, Q., & Liu, H. (2024). "<em><a href="https://dl.acm.org/doi/abs/10.1145/3637528.3671660" target="_blank">HiFGL: A Hierarchical Framework for Cross-silo Cross-device Federated Graph Learning</a></em>". In <em>Proceedings of the 30th ACM SIGKDD Conference on Knowledge Discovery and Data Mining</em>(KDD2024).
+                </li>
+                <!-- Publication 5 -->
+                <li>
+                    <strong>Yao, D.</strong>, Li, S., Gong, X., Hou, S., & Pan, G. (2024). "<em><a href="https://arxiv.org/abs/2404.19582" target="_blank">Leveraging Label Information for Stealthy Data Stealing in Vertical Federated Learning</a></em>". <em>arXiv preprint arXiv:2404.19582</em>.
+                </li>
+            </ul>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Email: <a href="mailto:=dyao@connect.ust.hk">dyao@connect.ust.hk</a></p>
+            <p>Google Scholar: <a href="https://scholar.google.com/citations?user=yNVBHLIAAAAJ&hl=en" target="_blank">View my Google Scholar profile</a></p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; <span id="year"></span> Your Name | Last updated: <span id="last-updated"></span></p>
+    </footer>
+
+    <!-- JavaScript to Update Year and Last Updated Date -->
+    <script>
+        document.getElementById('year').innerText = new Date().getFullYear();
+        document.getElementById('last-updated').innerText = document.lastModified;
+    </script>
+</body>
+</html>
