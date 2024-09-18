@@ -6,27 +6,30 @@
     <title>DuanyiYao - Homepage</title>
     <style>
             #profile-photo {
-        max-width: 200px; /* Adjust this value as needed */
-        border-radius: 50%; /* This makes the image circular */
-        float: right; /* This aligns the image to the right */
-        margin: 0 0 20px 20px; /* This adds some space around the image */
+    max-width: 200px; /* Adjust this value as needed */
+    width: 200px; /* Set a fixed width */
+    height: 250px; /* Set a fixed height for a rectangular shape */
+    object-fit: cover; /* This ensures the image covers the area without stretching */
+    float: right; /* This aligns the image to the right */
+    margin: 0 0 20px 20px; /* This adds some space around the image */
+    border: 2px solid #4682b4; /* Optional: adds a border */
+}
+
+/* Add this to ensure text wraps around the image */
+#about::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+    #profile-photo {
+        float: none;
+        display: block;
+        margin: 0 auto 20px;
     }
-    
-    /* Add this to ensure text wraps around the image */
-    #about::after {
-        content: "";
-        display: table;
-        clear: both;
-    }
-    
-    /* Responsive design for smaller screens */
-    @media (max-width: 600px) {
-        #profile-photo {
-            float: none;
-            display: block;
-            margin: 0 auto 20px;
-        }
-    }
+}
         body {
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
