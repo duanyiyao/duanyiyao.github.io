@@ -187,37 +187,6 @@
     z-index: -1;
   }
 
-  .summary-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
-    margin: 26px 0 68px;
-  }
-
-  .summary-card {
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    padding: 18px 18px 16px;
-    box-shadow: 0 12px 40px rgba(20, 54, 88, 0.045);
-    backdrop-filter: blur(8px);
-  }
-
-  .summary-num {
-    font-family: "Newsreader", serif;
-    font-size: 26px;
-    line-height: 1;
-    color: var(--accent-deep);
-    font-weight: 600;
-  }
-
-  .summary-text {
-    margin-top: 8px;
-    color: var(--soft);
-    font-size: 13.5px;
-    line-height: 1.5;
-  }
-
   section { margin-top: 64px; }
 
   .section-head {
@@ -463,10 +432,6 @@
       height: 190px;
     }
 
-    .summary-grid {
-      grid-template-columns: 1fr;
-    }
-
     .focus-list {
       grid-template-columns: 1fr;
     }
@@ -516,9 +481,11 @@
       <div class="kicker">AI Security · Trustworthy ML · Agentic Systems</div>
       <h1>Duanyi Yao</h1>
       <p class="subtitle">
-        I am a <strong>Postdoctoral Researcher at the CMU Safe AI Lab</strong>, working on
-        LLM/VLM safety, adversarial robustness, privacy-preserving machine learning, and
-        agentic AI for security-critical systems.
+        I am a postdoctoral researcher at the <strong>CMU Safe AI Lab</strong>, where I work on
+        <strong>blockchain agent validation</strong> — building agentic AI systems that audit and
+        verify on-chain transactions. My broader research studies the safety and security of
+        machine learning systems, spanning multimodal models, federated learning, and agentic AI.
+        I completed my PhD at <strong>HKUST</strong>, advised by Prof. Songze Li and Prof. Yangqiu Song.
       </p>
 
       <div class="hero-links">
@@ -531,21 +498,6 @@
       <img class="header-photo" src="profile.jpg" alt="Portrait of Duanyi Yao">
     </div>
   </header>
-
-  <div class="summary-grid">
-    <div class="summary-card">
-      <div class="summary-num">CMU</div>
-      <div class="summary-text">Postdoctoral researcher building safe and reliable AI systems.</div>
-    </div>
-    <div class="summary-card">
-      <div class="summary-num">8+</div>
-      <div class="summary-text">Selected publications across ML, security, privacy, and systems venues.</div>
-    </div>
-    <div class="summary-card">
-      <div class="summary-num">AI × Security</div>
-      <div class="summary-text">Research spanning VLM attacks, federated learning, and DeFi auditing agents.</div>
-    </div>
-  </div>
 
   <section id="research">
     <div class="section-head">
@@ -592,13 +544,14 @@
       <div>
         <div class="entry-title">Postdoctoral Researcher · <span class="entry-org">Carnegie Mellon University</span></div>
         <p class="entry-desc">
-          Researching RL-based autonomous agents, intrinsic-motivation skill discovery, and agentic AI systems
-          for blockchain security and automated DeFi auditing.
+          Building agentic AI systems for blockchain agent validation — integrating graph-of-thought
+          reasoning with on-chain validation pipelines for automated DeFi auditing. Also developing
+          RL-based autonomous agents with intrinsic-motivation skill discovery.
         </p>
         <div class="tags">
+          <span class="tag">Blockchain Agent Validation</span>
           <span class="tag">Agentic AI</span>
           <span class="tag">Reinforcement Learning</span>
-          <span class="tag">Blockchain Security</span>
         </div>
       </div>
     </div>
@@ -631,22 +584,6 @@
           <span class="tag">VLM Security</span>
           <span class="tag">Backdoor Attacks</span>
           <span class="tag">Multimodal AI</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-date">Sep 2021 — Jan 2026</div>
-      <div>
-        <div class="entry-title">Graduate Research Assistant · <span class="entry-org">HKUST</span></div>
-        <p class="entry-desc">
-          Studied privacy and robustness in vertical federated learning, including reconstruction attacks,
-          straggler-resilient private learning, and adversarial example construction via multi-armed bandits.
-        </p>
-        <div class="tags">
-          <span class="tag">Federated Learning</span>
-          <span class="tag">Privacy Attacks</span>
-          <span class="tag">Adversarial ML</span>
         </div>
       </div>
     </div>
