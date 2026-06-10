@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Duanyi Yao</title>
+<meta name="description" content="Duanyi Yao — Postdoctoral Researcher at CMU Safe AI Lab. Research in LLM/VLM safety, adversarial robustness, privacy-preserving machine learning, federated learning, and agentic AI for security-critical systems." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --ink: #101823;
+    --soft: #45515f;
+    --muted: #7b8794;
+    --faint: #a2acb8;
+    --paper: #f8fbff;
+    --card: rgba(255, 255, 255, 0.82);
+    --line: #dfe7f1;
+
+    --accent: #155fa4;
+    --accent-deep: #0b3f73;
+    --accent-soft: #e6f1fb;
+    --accent-warm: #9b5c2e;
+
+    --shadow: 0 18px 60px rgba(20, 54, 88, 0.08);
+    --radius: 18px;
+    --maxw: 860px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background:
+      radial-gradient(circle at top left, rgba(21, 95, 164, 0.12), transparent 34rem),
+      radial-gradient(circle at 85% 8%, rgba(155, 92, 46, 0.08), transparent 28rem),
+      var(--paper);
+    color: var(--ink);
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    line-height: 1.68;
+    -webkit-font-smoothing: antialiased;
+    padding: 0 24px;
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(21, 95, 164, 0.25);
+    transition: color 0.18s ease, border-color 0.18s ease;
+  }
+
+  a:hover {
+    color: var(--accent-deep);
+    border-color: var(--accent-deep);
+  }
+
+  .wrap {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 36px 0 110px;
+  }
+
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 74px;
+    font-size: 13.5px;
+    color: var(--muted);
+  }
+
+  .mark {
+    font-family: "Inter Tight", sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--accent-deep);
+  }
+
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+
+  .nav a {
+    color: var(--muted);
+    border-bottom: none;
+  }
+
+  .nav a:hover { color: var(--accent-deep); }
+
+  header {
+    display: grid;
+    grid-template-columns: 1fr 190px;
+    gap: 46px;
+    align-items: center;
+    margin-bottom: 64px;
+  }
+
+  .kicker {
+    font-family: "Inter Tight", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+
+  h1 {
+    font-family: "Newsreader", serif;
+    font-weight: 600;
+    font-size: clamp(44px, 7vw, 72px);
+    letter-spacing: -0.045em;
+    line-height: 0.96;
+    color: var(--ink);
+  }
+
+  .subtitle {
+    margin-top: 22px;
+    max-width: 640px;
+    font-size: 18px;
+    line-height: 1.68;
+    color: var(--soft);
+  }
+
+  .subtitle strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  .hero-links {
+    margin-top: 28px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 13px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid var(--line);
+    color: var(--accent-deep);
+    font-size: 13.5px;
+    font-weight: 500;
+    box-shadow: 0 8px 28px rgba(20, 54, 88, 0.04);
+  }
+
+  .pill:hover {
+    background: white;
+    border-color: rgba(21, 95, 164, 0.34);
+  }
+
+  .photo-wrap {
+    position: relative;
+  }
+
+  .header-photo {
+    width: 190px;
+    height: 238px;
+    object-fit: cover;
+    border-radius: 22px;
+    border: 1px solid rgba(21, 95, 164, 0.18);
+    box-shadow: var(--shadow);
+    background: white;
+  }
+
+  .photo-wrap::after {
+    content: "";
+    position: absolute;
+    width: 92px;
+    height: 92px;
+    right: -18px;
+    bottom: -18px;
+    border-radius: 24px;
+    background: var(--accent-soft);
+    z-index: -1;
+  }
+
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin: 26px 0 68px;
+  }
+
+  .summary-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 18px 18px 16px;
+    box-shadow: 0 12px 40px rgba(20, 54, 88, 0.045);
+    backdrop-filter: blur(8px);
+  }
+
+  .summary-num {
+    font-family: "Newsreader", serif;
+    font-size: 26px;
+    line-height: 1;
+    color: var(--accent-deep);
+    font-weight: 600;
+  }
+
+  .summary-text {
+    margin-top: 8px;
+    color: var(--soft);
+    font-size: 13.5px;
+    line-height: 1.5;
+  }
+
+  section { margin-top: 64px; }
+
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 20px;
+    padding-bottom: 11px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 24px;
+  }
+
+  .eyebrow {
+    font-family: "Inter Tight", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .section-note {
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .lead {
+    max-width: 720px;
+    color: var(--soft);
+    font-size: 16px;
+  }
+
+  .lead strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  .focus-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 24px;
+  }
+
+  .focus {
+    background: rgba(255,255,255,0.72);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 18px 18px 17px;
+  }
+
+  .focus h3 {
+    font-family: "Inter Tight", sans-serif;
+    font-size: 15px;
+    color: var(--ink);
+    margin-bottom: 7px;
+  }
+
+  .focus p {
+    color: var(--soft);
+    font-size: 14px;
+    line-height: 1.58;
+  }
+
+  .entry {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 28px;
+    padding: 22px 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .entry:first-of-type { border-top: none; padding-top: 0; }
+
+  .entry-date {
+    font-family: "Inter Tight", sans-serif;
+    font-size: 13px;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  .entry-title {
+    font-weight: 700;
+    color: var(--ink);
+    font-size: 15.5px;
+  }
+
+  .entry-org {
+    color: var(--accent-deep);
+    font-weight: 500;
+  }
+
+  .entry-desc {
+    color: var(--soft);
+    font-size: 14.5px;
+    margin-top: 7px;
+    max-width: 650px;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 11px;
+  }
+
+  .tag {
+    font-size: 12px;
+    color: var(--accent-deep);
+    background: var(--accent-soft);
+    border: 1px solid rgba(21, 95, 164, 0.08);
+    padding: 3px 9px;
+    border-radius: 999px;
+  }
+
+  .pub {
+    padding: 18px 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .pub:first-of-type {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  .pub-title {
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+
+  .pub-title strong { font-weight: 700; }
+
+  .pub-meta {
+    margin-top: 7px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 9px 11px;
+    font-size: 13.3px;
+    color: var(--soft);
+  }
+
+  .venue {
+    font-family: "Inter Tight", sans-serif;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.045em;
+    color: var(--accent-deep);
+    background: var(--accent-soft);
+    padding: 4px 9px;
+    border-radius: 999px;
+  }
+
+  .venue.hot {
+    color: #7b3b15;
+    background: #f7eadf;
+  }
+
+  .me {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  .skill-row {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 22px;
+    padding: 15px 0;
+    border-top: 1px solid var(--line);
+    font-size: 14.5px;
+  }
+
+  .skill-row:first-child { border-top: none; padding-top: 0; }
+
+  .skill-label {
+    font-family: "Inter Tight", sans-serif;
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent-deep);
+  }
+
+  .skill-val {
+    color: var(--soft);
+  }
+
+  .callout {
+    margin-top: 64px;
+    background:
+      linear-gradient(135deg, rgba(21, 95, 164, 0.10), rgba(255, 255, 255, 0.82));
+    border: 1px solid rgba(21, 95, 164, 0.18);
+    border-radius: 24px;
+    padding: 26px 28px;
+    box-shadow: var(--shadow);
+  }
+
+  .callout h2 {
+    font-family: "Newsreader", serif;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+  }
+
+  .callout p {
+    color: var(--soft);
+    max-width: 700px;
+    font-size: 15px;
+  }
+
+  footer {
+    margin-top: 74px;
+    padding-top: 22px;
+    border-top: 1px solid var(--line);
+    font-size: 13px;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 760px) {
+    .topbar {
+      align-items: flex-start;
+      flex-direction: column;
+      margin-bottom: 50px;
+    }
+
+    header {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+
+    .photo-wrap {
+      order: -1;
+    }
+
+    .header-photo {
+      width: 152px;
+      height: 190px;
+    }
+
+    .summary-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .focus-list {
+      grid-template-columns: 1fr;
+    }
+
+    .entry {
+      grid-template-columns: 1fr;
+      gap: 6px;
+    }
+
+    .skill-row {
+      grid-template-columns: 1fr;
+      gap: 6px;
+    }
+
+    .section-head {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 4px;
+    }
+  }
+
+  @media (max-width: 520px) {
+    body { padding: 0 18px; }
+    .wrap { padding-top: 28px; }
+    .nav { gap: 12px; }
+    .subtitle { font-size: 16px; }
+    .callout { padding: 22px; }
+  }
+</style>
+</head>
+
+<body>
+<div class="wrap">
+
+  <div class="topbar">
+    <div class="mark">DUANYI YAO</div>
+    <nav class="nav">
+      <a href="#research">Research</a>
+      <a href="#experience">Experience</a>
+      <a href="#publications">Publications</a>
+      <a href="#skills">Skills</a>
+    </nav>
+  </div>
+
+  <header>
+    <div>
+      <div class="kicker">AI Security · Trustworthy ML · Agentic Systems</div>
+      <h1>Duanyi Yao</h1>
+      <p class="subtitle">
+        I am a <strong>Postdoctoral Researcher at the CMU Safe AI Lab</strong>, working on
+        LLM/VLM safety, adversarial robustness, privacy-preserving machine learning, and
+        agentic AI for security-critical systems.
+      </p>
+
+      <div class="hero-links">
+        <a class="pill" href="mailto:duanyiy@andrew.cmu.edu">duanyiy@andrew.cmu.edu</a>
+        <a class="pill" href="https://scholar.google.com/citations?user=yNVBHLIAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+      </div>
+    </div>
+
+    <div class="photo-wrap">
+      <img class="header-photo" src="profile.jpg" alt="Portrait of Duanyi Yao">
+    </div>
+  </header>
+
+  <div class="summary-grid">
+    <div class="summary-card">
+      <div class="summary-num">CMU</div>
+      <div class="summary-text">Postdoctoral researcher building safe and reliable AI systems.</div>
+    </div>
+    <div class="summary-card">
+      <div class="summary-num">8+</div>
+      <div class="summary-text">Selected publications across ML, security, privacy, and systems venues.</div>
+    </div>
+    <div class="summary-card">
+      <div class="summary-num">AI × Security</div>
+      <div class="summary-text">Research spanning VLM attacks, federated learning, and DeFi auditing agents.</div>
+    </div>
+  </div>
+
+  <section id="research">
+    <div class="section-head">
+      <div class="eyebrow">Research</div>
+      <div class="section-note">What I work on</div>
+    </div>
+
+    <p class="lead">
+      My research studies how modern AI systems fail — and how to make them safer.
+      I uncover vulnerabilities in <strong>vision-language models</strong> and
+      <strong>federated learning systems</strong>, design privacy-preserving and robust learning
+      methods, and build <strong>agentic AI systems</strong> for high-stakes domains such as
+      blockchain security and automated DeFi auditing.
+    </p>
+
+    <div class="focus-list">
+      <div class="focus">
+        <h3>LLM/VLM Safety</h3>
+        <p>Backdoors, memorization, hidden behaviors, evaluation, and safety risks in multimodal foundation models.</p>
+      </div>
+      <div class="focus">
+        <h3>Federated Learning Security</h3>
+        <p>Privacy attacks, reconstruction risks, adversarial robustness, and secure vertical federated learning.</p>
+      </div>
+      <div class="focus">
+        <h3>Agentic AI for Security</h3>
+        <p>Auditable LLM agents, dynamic validation graphs, and failure attribution for security-critical workflows.</p>
+      </div>
+      <div class="focus">
+        <h3>Trustworthy ML Systems</h3>
+        <p>Building reliable ML pipelines that connect algorithmic guarantees with practical deployment constraints.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="section-head">
+      <div class="eyebrow">Experience</div>
+      <div class="section-note">Research appointments</div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-date">Apr 2026 — Present</div>
+      <div>
+        <div class="entry-title">Postdoctoral Researcher · <span class="entry-org">Carnegie Mellon University</span></div>
+        <p class="entry-desc">
+          Researching RL-based autonomous agents, intrinsic-motivation skill discovery, and agentic AI systems
+          for blockchain security and automated DeFi auditing.
+        </p>
+        <div class="tags">
+          <span class="tag">Agentic AI</span>
+          <span class="tag">Reinforcement Learning</span>
+          <span class="tag">Blockchain Security</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-date">Jun 2025 — Mar 2026</div>
+      <div>
+        <div class="entry-title">Research Scientist Consultant · <span class="entry-org">NAVA Labs</span></div>
+        <p class="entry-desc">
+          Built an auditable LLM validation agent for DeFi security with node-level failure attribution.
+          Designed a graph-based validation pipeline evaluated on 18K+ transactions across three protocols.
+        </p>
+        <div class="tags">
+          <span class="tag">LLM Agents</span>
+          <span class="tag">DeFi Security</span>
+          <span class="tag">Failure Attribution</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-date">May 2025 — Nov 2025</div>
+      <div>
+        <div class="entry-title">Research Intern · <span class="entry-org">Ant Group</span></div>
+        <p class="entry-desc">
+          Developed Hidden Ads, a behavior-triggered semantic backdoor attack for advertisement injection
+          in vision-language models, revealing emerging multimodal threat vectors.
+        </p>
+        <div class="tags">
+          <span class="tag">VLM Security</span>
+          <span class="tag">Backdoor Attacks</span>
+          <span class="tag">Multimodal AI</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-date">Sep 2021 — Jan 2026</div>
+      <div>
+        <div class="entry-title">Graduate Research Assistant · <span class="entry-org">HKUST</span></div>
+        <p class="entry-desc">
+          Studied privacy and robustness in vertical federated learning, including reconstruction attacks,
+          straggler-resilient private learning, and adversarial example construction via multi-armed bandits.
+        </p>
+        <div class="tags">
+          <span class="tag">Federated Learning</span>
+          <span class="tag">Privacy Attacks</span>
+          <span class="tag">Adversarial ML</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="publications">
+    <div class="section-head">
+      <div class="eyebrow">Selected Publications</div>
+      <div class="section-note">Full list on Google Scholar</div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title"><strong>Hidden Ads: Behavior-Triggered Semantic Backdoors for Advertisement Injection in Vision–Language Models</strong></div>
+      <div class="pub-meta">
+        <span class="venue">Under Review</span>
+        <span><span class="me">D. Yao</span>, C. Li, Z. Huang, C. Hong, S. Li</span>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title"><strong>Auditable LLM Arbiter for DeFi Security: A Hybrid Graph-of-Thoughts Approach to Intent–Transaction Alignment</strong></div>
+      <div class="pub-meta">
+        <span class="venue hot">NDSS LAST-X '26</span>
+        <span><span class="me">D. Yao</span>, S. Jagannath, B. Aroso, V. Krishnan, D. Zhao</span>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title"><strong>URVFL: Undetectable Data Reconstruction Attack on Vertical Federated Learning</strong></div>
+      <div class="pub-meta">
+        <span class="venue">NDSS 2025</span>
+        <span><span class="me">D. Yao</span>, S. Li, X. Gong, S. Hou, G. Pan</span>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title"><strong>DeDe: Detecting Backdoor Samples for SSL Encoders via Decoders</strong></div>
+      <div class="pub-meta">
+        <span class="venue">CVPR 2025</span>
+        <span>S. Hou, S. Li, <span class="me">D. Yao</span></span>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title"><strong>Constructing Adversarial Examples for Vertical Federated Learning: Optimal Client Corruption through Multi-Armed Bandit</strong></div>
+      <div class="pub-meta">
+        <span class="venue">ICLR 2024</span>
+        <span><span class="me">D. Yao</span>, S. Li, Y. Xue, J. Liu</span>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title"><strong>HiFGL: A Hierarchical Framework for Cross-silo Cross-device Federated Graph Learning</strong></div>
+      <div class="pub-meta">
+        <span class="venue">KDD 2024</span>
+        <span>Z. Guo, <span class="me">D. Yao</span>, Q. Yang, H. Liu</span>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title"><strong>PrivLM-Bench: A Multi-Level Privacy Evaluation Benchmark for Language Models</strong></div>
+      <div class="pub-meta">
+        <span class="venue">ACL 2024</span>
+        <span>H. Li, D. Guo, D. Li, et al., <span class="me">D. Yao</span>, Y. Yao, Y. Song</span>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title"><strong>FedVS: Straggler-Resilient and Privacy-Preserving Vertical Federated Learning for Split Models</strong></div>
+      <div class="pub-meta">
+        <span class="venue">ICML 2023</span>
+        <span>S. Li, <span class="me">D. Yao</span>, J. Liu</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="section-head">
+      <div class="eyebrow">Skills & Service</div>
+      <div class="section-note">Technical profile</div>
+    </div>
+
+    <div class="skill-row">
+      <div class="skill-label">Research</div>
+      <div class="skill-val">
+        LLM/VLM safety, adversarial robustness, privacy-preserving ML, vertical federated learning,
+        reinforcement learning, agentic AI, blockchain security.
+      </div>
+    </div>
+
+    <div class="skill-row">
+      <div class="skill-label">Engineering</div>
+      <div class="skill-val">
+        Python, PyTorch, distributed training, DeepSpeed, Docker, Git, W&B, LLM evaluation pipelines,
+        agentic LLM systems.
+      </div>
+    </div>
+
+    <div class="skill-row">
+      <div class="skill-label">Service</div>
+      <div class="skill-val">
+        Reviewer for NeurIPS, ICLR, ICML, AISTATS, IEEE TPDS · Local Arrangement Chair, IAVVC 2024.
+      </div>
+    </div>
+
+    <div class="skill-row">
+      <div class="skill-label">Education</div>
+      <div class="skill-val">
+        Ph.D. in Computer Science, HKUST, 2021–2026 · B.E. in Electronic Information Engineering,
+        UESTC, 2017–2021.
+      </div>
+    </div>
+  </section>
+
+  <div class="callout">
+    <h2>Research interests meet real-world security.</h2>
+    <p>
+      I am interested in research scientist, applied scientist, and ML/security roles where I can build
+      trustworthy AI systems — especially at the intersection of foundation models, autonomous agents,
+      privacy, and security-critical applications.
+    </p>
+  </div>
+
+  <footer>
+    <span>Duanyi Yao · Pittsburgh, PA</span>
+    <span>Last updated 2026</span>
+  </footer>
+
+</div>
+
+<!-- Visitor analytics (GoatCounter). Dashboard: https://duanyiyao.goatcounter.com -->
+<script data-goatcounter="https://duanyiyao.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+</body>
+</html>
